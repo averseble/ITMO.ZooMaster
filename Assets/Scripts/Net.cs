@@ -13,6 +13,7 @@ public class Net : MonoBehaviour
     [SerializeField] private HandPointer _pointer;
     [SerializeField] private Aviaries _aviaries;
     [SerializeField] private InGameInput _input;
+    [SerializeField] private PlayersPet _PlayersPet;
 
     private List<Node> _nodes = new List<Node>();
     private List<Node> _selectedNodes = new List<Node>();
@@ -79,6 +80,7 @@ public class Net : MonoBehaviour
     {
         if (Physics.Raycast(Camera.main.ScreenPointToRay(mousePosition), out RaycastHit hit, 1000))
         {
+            _PlayersPet.goToSelectrion( hit.point);
             if (Time.timeScale == 0)
                 return;
 
